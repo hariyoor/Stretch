@@ -28,7 +28,12 @@ public class Main {
 			for(int i = 1; i <= Integer.parseInt(blockDetails[0]); i++) {
 				blocks.add(i-1, Integer.parseInt(blockDetails[i]));
 			}
-			Grid grid = new Grid(rows, columns, start, blocks);
+			Grid grid;
+			if(start % columns == 1) {
+				grid = new ForwardGrid(rows, columns, start, blocks);
+			} else {
+				grid = new ReverseGrid(rows, columns, start, blocks);
+			}	
 			grid.generateGrid();
 			//grid.solve(start, 'A');
 			
