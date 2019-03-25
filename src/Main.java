@@ -30,6 +30,7 @@ public class Main {
 			}
 			Grid grid = new Grid(rows, columns, start, blocks);
 			grid.generateGrid();
+			//grid.solve(start, 'A');
 			
 			System.out.println("Enter grid details:");
 			input = in.nextLine();
